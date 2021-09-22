@@ -4,20 +4,20 @@
 
 Name:           xzs
 Version:        3.3.0
-Release:        1
+Release:        2
 Summary:        The xzs is an examination system 
 License:        AGPL-3.0
 URL:            https://github.com/mindskip
-Source0:        https://github.com/mindskip/xzs/archive/refs/tags/t%{version}.tar.gz
+Source0:        %{name}-mysql-t%{version}.tar.gz
 
 BuildRequires:  java-1.8.0-openjdk-devel maven nodejs
-Requires:       java-1.8.0-openjdk mysql redis
+Requires:       java-1.8.0-openjdk mysql
 
 %description
 The open source examination system of Xuezhisi is a java + vue examination system with separated front and back ends. The main advantages are simple and quick development and deployment, friendly interface design, and clear code structure. It supports web and WeChat applets, and can cover PCs and mobile phones and other devices. Support multiple deployment methods: integrated deployment, front-end and back-end separate deployment, docker deployment
 
 %prep
-%autosetup -p1 -n xzs-t%{version}
+%autosetup -p1 -n %{name}-mysql-t%{version}
 %build
 # 前端admin编译
 npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
@@ -43,7 +43,7 @@ popd
 
 %install
 mkdir -p %{buildroot}/%{_datarootdir}/xzs
-cp -rf source/xzs/target/xzs-%{version}.jar %{buildroot}/%{_datarootdir}/xzs/
+cp -rf source/xzs/target/xzs-3.3.0.jar %{buildroot}/%{_datarootdir}/xzs/
 
 
 %files
@@ -51,5 +51,9 @@ cp -rf source/xzs/target/xzs-%{version}.jar %{buildroot}/%{_datarootdir}/xzs/
 %license LICENSE
 
 %changelog
+* Wed Sep 22 2021 SnorKeling <1870104920@qq.com> - 3.3.0-2
+- Update source0
+- optimization spec
+
 * Thu Aug 05 2021 SnorKeling <1870104920@qq.com> - 3.3.0-1
 - xzs to rpm
