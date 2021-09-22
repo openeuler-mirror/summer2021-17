@@ -43,7 +43,7 @@ popd
 
 %install
 mkdir -p %{buildroot}/%{_datarootdir}/xzs
-cp -rf source/xzs/target/xzs-3.3.0.jar %{buildroot}/%{_datarootdir}/xzs/
+cp -rf source/xzs/target/xzs-%{version}.jar %{buildroot}/%{_datarootdir}/xzs/
 
 
 %files
