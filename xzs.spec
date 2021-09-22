@@ -11,7 +11,7 @@ URL:            https://github.com/mindskip
 Source0:        %{name}-mysql-t%{version}.tar.gz
 
 BuildRequires:  java-1.8.0-openjdk-devel maven nodejs
-Requires:       java-1.8.0-openjdk mysql
+Requires:       java-1.8.0-openjdk mysql redis
 
 %description
 The open source examination system of Xuezhisi is a java + vue examination system with separated front and back ends. The main advantages are simple and quick development and deployment, friendly interface design, and clear code structure. It supports web and WeChat applets, and can cover PCs and mobile phones and other devices. Support multiple deployment methods: integrated deployment, front-end and back-end separate deployment, docker deployment
